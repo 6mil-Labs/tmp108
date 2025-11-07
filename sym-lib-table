@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "SparkFun-Qwiic")(type "KiCad")(uri "${KIPRJMOD}/SparkFun-Qwiic.kicad_sym")(options "")(descr ""))
+  (lib (name "ODP")(type "KiCad")(uri "/home/balbi/kicad/6mil-labs/ODP-KiCAD-Libraries/ODP.kicad_sym")(options "")(descr ""))
+)

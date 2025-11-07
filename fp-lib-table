@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "SparkFun-Qwiic")(type "KiCad")(uri "${KIPRJMOD}/SparkFun-Qwiic.pretty")(options "")(descr ""))
+  (lib (name "ODP")(type "KiCad")(uri "D:/workspace/kicad/ODP-KiCAD-Libraries/ODP.pretty")(options "")(descr ""))
+)
