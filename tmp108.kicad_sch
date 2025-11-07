@@ -5154,7 +5154,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "PCM_SparkFun-Resistor:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 99.06 55.88 0)
 			(effects
 				(font
@@ -5190,7 +5190,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25804"
 			(at 95.25 55.88 90)
 			(effects
 				(font
@@ -5963,7 +5963,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "PCM_SparkFun-Resistor:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 88.9 55.88 0)
 			(effects
 				(font
@@ -5999,7 +5999,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25804"
 			(at 85.09 55.88 90)
 			(effects
 				(font
@@ -6429,7 +6429,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "PCM_SparkFun-Capacitor:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 24.13 78.74 0)
 			(effects
 				(font
@@ -6465,7 +6465,7 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "16V"
+		(property "Voltage" "60V"
 			(at 26.67 68.5862 0)
 			(effects
 				(font
@@ -6483,7 +6483,7 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C1525"
+		(property "LCSC" "C14663"
 			(at 24.13 67.31 0)
 			(effects
 				(font
@@ -6602,7 +6602,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "PCM_SparkFun-Resistor:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 109.22 55.88 0)
 			(effects
 				(font
@@ -6638,7 +6638,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25804"
 			(at 105.41 55.88 90)
 			(effects
 				(font
@@ -7342,7 +7342,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "PCM_SparkFun-Resistor:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 43.942 160.02 0)
 			(effects
 				(font
@@ -7378,7 +7378,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C11702"
+		(property "LCSC" "C21190"
 			(at 39.37 160.02 90)
 			(effects
 				(font
