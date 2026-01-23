@@ -549,7 +549,7 @@
         "pcb_color": "rgb(255, 127, 127)",
         "priority": 4,
         "schematic_color": "rgb(186, 45, 47)",
-        "track_width": 0.3048,
+        "track_width": 0.4572,
         "via_diameter": 0.6096,
         "via_drill": 0.3048,
         "wire_width": 12
@@ -756,5 +756,7 @@
       "Root"
     ]
   ],
-  "text_variables": {}
+  "text_variables": {
+    "REVISION": "1"
+  }
 }
