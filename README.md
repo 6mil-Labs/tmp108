@@ -5,15 +5,14 @@ temperature sensor.
 
 The TMP108 is a 12-bit I²C/SMBus temperature sensor with a dynamically-programmable
 alert window, packaged in a 6-ball WCSP. This board brings it out to two Qwiic
-connectors for daisy-chaining, a 0.1" header for breadboard use, and a full set of
-test points.
+connectors for daisy-chaining and a 0.1" header for breadboard use.
 
 - **Resolution:** 12 bits (0.0625 °C)
 - **Accuracy:** ±0.75 °C max (−20 °C to +85 °C), ±1 °C max (−40 °C to +125 °C)
 - **Supply:** 1.4 V to 3.6 V (3.3 V from the Qwiic bus)
 - **Current:** 6 µA max, active
 - **Interface:** I²C / SMBus, four solder-selectable addresses
-- **ALERT:** programmable over/under-temperature window, broken out to header and test point
+- **ALERT:** programmable over/under-temperature window, broken out to the header
 
 ## Board
 
@@ -91,13 +90,9 @@ the LED dominates the board's consumption by more than two orders of magnitude.
 
 ## Test points
 
-Six 1.0 mm pads in two columns along the left edge:
-
-| Pad | Signal | Pad | Signal |
-|---|---|---|---|
-| TP1 | 3V3 | TP4 | SCL |
-| TP2 | GND | TP5 | ALERT |
-| TP3 | A0 | TP6 | SDA |
+Six unrouted test pads were present in earlier revisions of this design and have been
+removed. Probe the 0.1" header (`J3`) instead — it exposes GND, 3V3, SDA, SCL and
+ALERT.
 
 ## Bill of materials
 
@@ -111,7 +106,6 @@ Six 1.0 mm pads in two columns along the left edge:
 | D1 | Red LED | 0603 | C2286 |
 | J1, J2 | Qwiic JST SH 1 mm RA | SMD | C51940130 |
 | J3 | 1 × 5 header | 2.54 mm THT | — |
-| TP1–TP6 | Test point | 1.0 mm pad | — |
 
 ## Repository layout
 
@@ -159,9 +153,7 @@ archive, `bom.csv`, `positions.csv`, `designators.csv` and `netlist.ipc` into
 Order as a 4-layer, 1.6 mm board with lead-free HASL.
 
 `J3` is marked DNP and is left out of the generated BOM — solder your own header if you
-want it. The six test points, however, *are* emitted into `bom.csv` with an empty part
-number (they have no placement data and nothing to assemble); delete that row before
-uploading.
+want it.
 
 ## License
 
