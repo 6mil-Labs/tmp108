@@ -1,7 +1,11 @@
 # TMP108 Qwiic
 
-A 1" × 1" Qwiic-compatible breakout for the Texas Instruments [TMP108][ds] digital
+A 1" × 1" Qwiic / STEMMA QT breakout for the Texas Instruments [TMP108][ds] digital
 temperature sensor.
+
+**[Buy an assembled board on Tindie][tindie]** — or build your own from the sources
+here. **Driver:** [`tmp108`][driver], a platform-agnostic `embedded-hal` Rust crate
+([docs.rs][docs]).
 
 The TMP108 is a 12-bit I²C/SMBus temperature sensor with a dynamically-programmable
 alert window, packaged in a 6-ball WCSP. This board brings it out to two Qwiic
@@ -29,7 +33,8 @@ connectors for daisy-chaining and a 0.1" header for breadboard use.
 ## Connectors
 
 **J1, J2** — Qwiic (JST SH, 1 mm pitch, 4-pin right-angle SMD). Electrically identical
-and wired in parallel, so the board can sit anywhere in a Qwiic chain.
+and wired in parallel, so the board can sit anywhere in a Qwiic chain. The connector and
+pinout are the same as Adafruit STEMMA QT, so either cable works.
 
 | Pin | Signal |
 |---|---|
@@ -155,6 +160,20 @@ Order as a 4-layer, 1.6 mm board with lead-free HASL.
 `J3` is marked DNP and is left out of the generated BOM — solder your own header if you
 want it.
 
+## Software
+
+[`tmp108`][driver] is a platform-agnostic Rust driver for this sensor, built on
+`embedded-hal` / `embedded-hal-async` and `no_std`. It covers the programmable alert
+window, one-shot conversions and all four I²C addresses.
+
+```toml
+[dependencies]
+tmp108 = "0.5"
+```
+
+API documentation is on [docs.rs][docs]. The driver is MIT-licensed and developed
+separately from this board — it works with any TMP108, not just this one.
+
 ## License
 
 Copyright (C) 2025-2026 6mil Labs.
@@ -188,6 +207,9 @@ Those files remain under CC BY 4.0. Under CERN-OHL-S they are Available Componen
 by this project.
 
 [ds]: https://www.ti.com/lit/ds/symlink/tmp108.pdf
+[tindie]: https://www.tindie.com/products/6millabs/tmp108-i2c-temp-sensor-breakout-qwiicstemma-qt/
+[driver]: https://github.com/OpenDevicePartnership/tmp108
+[docs]: https://docs.rs/tmp108
 [fabtk]: https://github.com/bennymeg/Fabrication-Toolkit
 [cern]: https://ohwr.org/cern_ohl_s_v2.txt
 [sfkicad]: https://github.com/sparkfun/SparkFun-KiCad-Libraries
