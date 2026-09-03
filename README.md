@@ -157,11 +157,38 @@ want it.
 
 ## License
 
-Released under the [Creative Commons Attribution-ShareAlike 4.0 International][cc]
-license.
+Copyright (C) 2025-2026 6mil Labs.
 
-Designed by Felipe Balbi — Copper and Code.
+This source describes Open Hardware and is licensed under the [CERN Open Hardware
+Licence Version 2 – Strongly Reciprocal][cern] (`CERN-OHL-S-2.0`). The full text is in
+[`LICENSE`](LICENSE).
+
+You may redistribute and modify this source and make products using it under the terms
+of the CERN-OHL-S v2. This source is distributed WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A
+PARTICULAR PURPOSE. Please see the CERN-OHL-S v2 for applicable conditions.
+
+Source location: <https://github.com/6mil-Labs/tmp108>
+
+CERN-OHL-S is strongly reciprocal: if you convey a product made from this source, or a
+modified version of the source, you must make the complete corresponding source
+available under the same licence (§3.3, §4).
+
+Designed by Felipe Balbi.
+
+### Third-party content
+
+The vendored `SparkFun-Qwiic.kicad_sym` and `SparkFun-Qwiic.pretty/` files, and the
+`PCM_SparkFun-*` symbols cached in `tmp108.kicad_sch`, are derived from the
+[SparkFun KiCad Libraries][sfkicad], copyright SparkFun Electronics and released under
+the [Creative Commons Attribution 4.0 International][ccby] licence.
+
+Those files remain under CC BY 4.0. Under CERN-OHL-S they are Available Components
+(§1.7) and keep "their own applicable licences" (§3.3(d)) rather than being relicensed
+by this project.
 
 [ds]: https://www.ti.com/lit/ds/symlink/tmp108.pdf
 [fabtk]: https://github.com/bennymeg/Fabrication-Toolkit
-[cc]: https://creativecommons.org/licenses/by-sa/4.0/
+[cern]: https://ohwr.org/cern_ohl_s_v2.txt
+[sfkicad]: https://github.com/sparkfun/SparkFun-KiCad-Libraries
+[ccby]: https://creativecommons.org/licenses/by/4.0/
