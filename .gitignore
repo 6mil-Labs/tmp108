@@ -33,7 +33,7 @@ fp-info-cache
 rescue-backup/
 
 *.tsv
-bom/
 
-# Gerber export output
-out/
+# Fabrication Toolkit output (regenerate with the plugin; not source)
+# Note: fabrication-toolkit-options.json is the plugin's *settings* and IS tracked.
+production/
