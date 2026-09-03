@@ -118,6 +118,7 @@ ALERT.
 tmp108.kicad_pro          KiCad project
 tmp108.kicad_sch          Schematic
 tmp108.kicad_pcb          Board layout
+6milLabs.kicad_sym        Local symbol library (TMP108)
 SparkFun-Qwiic.kicad_sym  Local symbol library (Qwiic logo)
 SparkFun-Qwiic.pretty/    Local footprint library (Qwiic logo, various sizes)
 sym-lib-table             Project symbol library table
@@ -131,19 +132,21 @@ Fabrication outputs are generated into `production/` and are not tracked.
 Designed with **KiCad 10** (`generator_version "10.0"`). Older releases may refuse to
 open these files or drop features on load.
 
-`SparkFun-Qwiic.kicad_sym` and `SparkFun-Qwiic.pretty/` are vendored in this repository
-and resolve through `${KIPRJMOD}`. Two dependencies are *not* vendored:
+`6milLabs.kicad_sym` (the `TMP108` symbol), `SparkFun-Qwiic.kicad_sym` and
+`SparkFun-Qwiic.pretty/` are vendored in this repository and resolve through
+`${KIPRJMOD}`, so a fresh clone needs no path fixing.
 
-- The **SparkFun KiCad libraries** from the Plugin and Content Manager. Symbols come
-  from `PCM_SparkFun-Aesthetic`, `-Capacitor`, `-Connector`, `-Jumper`, `-LED`,
-  `-PowerSymbol` and `-Resistor`. Only `PCM_SparkFun-Aesthetic` and
-  `PCM_SparkFun-Connector` supply footprints — the passives use the SparkFun 0402
-  symbols with their footprints overridden to the standard KiCad `Resistor_SMD`,
-  `Capacitor_SMD` and `LED_SMD` 0603 variants.
-- The **6milLabs** symbol library, which provides the `TMP108` symbol. `sym-lib-table`
-  references it by an absolute path
-  (`/home/balbi/kicad/6mil-labs/6milLabs-KiCAD-Libraries/6milLabs.kicad_sym`); edit that
-  entry to match your checkout.
+One dependency is *not* vendored: the **SparkFun KiCad libraries**, installed from the
+Plugin and Content Manager. Symbols come from `PCM_SparkFun-Aesthetic`, `-Capacitor`,
+`-Connector`, `-Jumper`, `-LED`, `-PowerSymbol` and `-Resistor`. Only
+`PCM_SparkFun-Aesthetic` and `PCM_SparkFun-Connector` supply footprints — the passives
+use the SparkFun 0402 symbols with their footprints overridden to the standard KiCad
+`Resistor_SMD`, `Capacitor_SMD` and `LED_SMD` 0603 variants.
+
+Install them from the PCM ("Libraries" tab, search "SparkFun"), then **close and reopen
+KiCad** — on KiCad 10 the libraries are not visible until you restart. Without them the
+schematic still opens and renders from its cached symbols, but ERC reports
+`lib_symbol_issues` and you cannot edit or update those symbols from the library.
 
 The board itself only needs the two PCM footprint libraries above, since everything
 else is either vendored or part of the stock KiCad footprint set.
