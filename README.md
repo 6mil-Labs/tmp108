@@ -3,9 +3,12 @@
 A 1" × 1" Qwiic / STEMMA QT breakout for the Texas Instruments [TMP108][ds] digital
 temperature sensor.
 
-**[Buy an assembled board on Tindie][tindie]** — or build your own from the sources
-here. **Driver:** [`tmp108`][driver], a platform-agnostic `embedded-hal` Rust crate
-([docs.rs][docs]).
+**Want one assembled and tested? [Buy it from 6mil Labs on Tindie][tindie]** — or build
+your own from the sources here.
+
+**Driver:** [`tmp108`][crate] — a `no_std` Embedded Rust driver with blocking and async
+APIs, ALERT threshold support and type-safe address constructors ([source][driver] ·
+[docs][docs]).
 
 The TMP108 is a 12-bit I²C/SMBus temperature sensor with a dynamically-programmable
 alert window, packaged in a 6-ball WCSP. This board brings it out to two Qwiic
@@ -165,17 +168,32 @@ want it.
 
 ## Software
 
-[`tmp108`][driver] is a platform-agnostic Rust driver for this sensor, built on
-`embedded-hal` / `embedded-hal-async` and `no_std`. It covers the programmable alert
-window, one-shot conversions and all four I²C addresses.
+[`tmp108`][crate] is a platform-agnostic Rust driver for this sensor, built on
+`embedded-hal` / `embedded-hal-async` and `no_std`. It offers blocking (`Tmp108`) and
+async (`AsyncTmp108`) APIs, ALERT threshold access, one-shot conversions, and type-safe
+constructors for all four I²C addresses.
 
 ```toml
 [dependencies]
 tmp108 = "0.5"
 ```
 
-API documentation is on [docs.rs][docs]. The driver is MIT-licensed and developed
-separately from this board — it works with any TMP108, not just this one.
+Each constructor corresponds to a jumper setting on this board, so the address you
+solder is the constructor you call:
+
+| Jumper setting | Address | Constructor |
+|---|---|---|
+| JP2 pads 1–2 (default) | 0x48 | `Tmp108::new_with_a0_gnd(i2c)` |
+| JP2 pads 2–3 | 0x49 | `Tmp108::new_with_a0_vplus(i2c)` |
+| JP1 pads 1–2 | 0x4A | `Tmp108::new_with_a0_sda(i2c)` |
+| JP1 pads 2–3 | 0x4B | `Tmp108::new_with_a0_scl(i2c)` |
+
+`AsyncTmp108` exposes the same four constructors. The programmable alert window maps to
+`set_high_limit` / `set_low_limit`, available in both the blocking and async APIs.
+
+API documentation is on [docs.rs][docs]; the [source is on GitHub][driver]. The driver
+is MIT-licensed and developed separately from this board — it works with any TMP108, not
+just this one.
 
 ## License
 
@@ -211,6 +229,7 @@ by this project.
 
 [ds]: https://www.ti.com/lit/ds/symlink/tmp108.pdf
 [tindie]: https://www.tindie.com/products/6millabs/tmp108-i2c-temp-sensor-breakout-qwiicstemma-qt/
+[crate]: https://crates.io/crates/tmp108
 [driver]: https://github.com/OpenDevicePartnership/tmp108
 [docs]: https://docs.rs/tmp108
 [fabtk]: https://github.com/bennymeg/Fabrication-Toolkit
